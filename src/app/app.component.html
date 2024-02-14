@@ -3,35 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
   </head>
   <body class="w-full h-screen leading-5">
-    <nav
-      class="nav flex justify-between w-full px-2 py-4 font-sans tx-base font-normal text-zinc-50"
-    >
-      <div class="flex justify-evenly basis-1/6">
-        <span class="font-bold headlink link">Personal</span>
-        <span class="headlink link">Business</span>
+    <main class="main w-full h-screen">
+      <nav
+        class="nav flex justify-between w-full px-2 py-4 font-sans tx-base font-normal text-zinc-50"
+      >
+        <div class="flex justify-evenly basis-1/6">
+          <span class="font-bold headlink link">Personal</span>
+          <span class="headlink link">Business</span>
+        </div>
+        <div class="center-nav basis-2/3 flex justify-center gap-4">
+          <a href="" class="no-underline text-sm link">Send Money</a>
+          <a href="" class="no-underline text-sm link">Converter</a>
+          <a href="" class="no-underline text-sm link">Currency API</a>
+          <a
+            href=""
+            class="no-underline text-sm link"
+            (mouseenter)="toolsHover()"
+            (mouseleave)="toolsHoverOut()"
+            >Tools
+            <div
+              class="absolute bg-slate-50 p-6 grid grid-cols-2 gap-8 rounded-lg top-20 right-28 text-black toolsContainer"
+            >
+              <section class="info flex flex-row gap-2">
+                <figure>
+                  <i class="fa-solid fa-chart-line icons"></i>
+                </figure>
+                <aside class="flex flex-col asideText">
+                  <p class="text-md">Category Charts</p>
+                  <span class="text-xs">Trends for any currency</span>
+                </aside>
+              </section>
+              <section class="info flex flex-row gap-2">
+                <figure>
+                  <i class="fa-solid fa-globe icons"></i>
+                </figure>
+                <aside class="flex flex-col asideText">
+                  <p class="text-md">IBAN Calculator</p>
+                  <span class="text-xs">Search and validate IBANs</span>
+                </aside>
+              </section>
+              <section class="info flex flex-row gap-2">
+                <figure>
+                  <i class="fa-regular fa-bell icons"></i>
+                </figure>
+                <aside class="flex flex-col asideText">
+                  <p class="text-md">Rate Alerts</p>
+                  <span class="text-xs"
+                    >Set your target rate and get alerted</span
+                  >
+                </aside>
+              </section>
+              <section class="info flex flex-row gap-2">
+                <figure>
+                  <i class="fa-solid fa-mobile-screen-button icons"></i>
+                </figure>
+                <aside class="flex flex-col asideText">
+                  <p class="text-md">Apps</p>
+                  <span class="text-xs">Smartphone apps and more</span>
+                </aside>
+              </section>
+              <section class="info flex flex-row gap-2">
+                <figure>
+                  <i class="fa-solid fa-magnifying-glass-chart icons"></i>
+                </figure>
+                <aside class="flex flex-col asideText">
+                  <p class="text-md">Historycal and Currency Rate</p>
+                  <span class="text-xs">Check history for any rate</span>
+                </aside>
+              </section>
+              <section class="info flex flex-row gap-2">
+                <figure>
+                  <i class="fa-solid fa-plus icons plus"></i>
+                </figure>
+                <aside class="flex flex-col asideText">
+                  <p class="text-md">More Tools</p>
+                </aside>
+              </section>
+            </div>
+          </a>
+
+          <a
+            href=""
+            class="no-underline text-sm link"
+            (mouseenter)="resourceHover()"
+            (mouseleave)="resourceHoverOut()"
+            >Resources</a
+          >
+          <div
+            class="flex flex-col gap-8 bg-slate-50 text-black rounded-lg absolute top-20 right-80 p-6 resourcesContainer"
+          >
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-regular fa-circle-question"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">Help Center</p>
+              </aside>
+            </section>
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-solid fa-user-plus"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">Refer A Friend</p>
+              </aside>
+            </section>
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-brands fa-blogger-b"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">Blog</p>
+              </aside>
+            </section>
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-regular fa-lightbulb"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">Money Transfer Tips</p>
+              </aside>
+            </section>
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-solid fa-book"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">Currency Encyclopedia</p>
+              </aside>
+            </section>
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-solid fa-newspaper"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">Currency Newsletters</p>
+              </aside>
+            </section>
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-solid fa-clipboard-list"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">Glossaries</p>
+              </aside>
+            </section>
+            <section class="flex flex-row gap-2 resourceInfo">
+              <figure class="figIcon">
+                <i class="fa-solid fa-plus"></i>
+              </figure>
+              <aside class="text-md asideResource">
+                <p class="textAside">More Tools</p>
+              </aside>
+            </section>
+          </div>
+        </div>
+        <div class="login basis-1/6 flex justify-evenly">
+          <button class="link">Sign Up</button
+          ><button class="btn px-6 py-2 font-normal rounded-lg">Log in</button>
+        </div>
+      </nav>
+      <div *ngIf="currencies">
+        <h2 class="underline">Currency List</h2>
+        <ul>
+          <li *ngFor="let currency of currencies.php | keyvalue">
+            {{ currency.key }} - {{ currency.value }}
+          </li>
+        </ul>
       </div>
-      <div class="center-nav basis-2/3 flex justify-center gap-4">
-        <a href="" class="no-underline text-sm link">Send Money</a>
-        <a href="" class="no-underline text-sm link">Converter</a>
-        <a href="" class="no-underline text-sm link">Currency API</a>
-        <a href="" class="no-underline text-sm link">Tools</a>
-        <a href="" class="no-underline text-sm link">Resources</a>
-      </div>
-      <div class="login basis-1/6 flex justify-evenly">
-        <button class="link">Sign Up</button
-        ><button class="btn px-6 py-2 font-normal rounded-lg">Log in</button>
-      </div>
-    </nav>
-    <div *ngIf="currencies">
-      <h2 class="underline">Currency List</h2>
-      <ul>
-        <li *ngFor="let currency of currencies.php | keyvalue">
-          {{ currency.key }} - {{ currency.value }}
-        </li>
-      </ul>
-    </div>
+    </main>
   </body>
 </html>
