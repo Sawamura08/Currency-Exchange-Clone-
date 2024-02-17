@@ -1,105 +1,202 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 :host {
-  --font-color: #1a86fa;
-  --font: 100rem;
+	--font-color: #1a86fa;
+	--familiy: "Inter", sans-serif;
 }
 
 * {
-  font-family: "Inter", sans-serif;
+	font-family: "Inter", sans-serif;
 }
 
 .nav {
-  background-color: #0a146e;
+	background-color: #0a146e;
 }
 
 .main {
-  background: #0575e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #021b79,
-    #0575e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #021b79,
-    #0575e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #0575e6; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #021b79, #0575e6); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to left,
+		#0a146e,
+		#0575e6
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .link {
-  padding-inline: 1rem;
-  padding-block: 0.5rem;
-  border-radius: 8px;
+	padding-inline: 1rem;
+	padding-block: 0.5rem;
+	border-radius: 8px;
 }
 
 .link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transition: 0.3s ease-in-out;
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: 0.3s ease-in-out;
 }
 
 .headlink {
-  padding: 0.5rem;
+	padding: 0.5rem;
 }
 
 .btn {
-  background-color: var(--font-color);
+	background-color: var(--font-color);
 }
 
 .btn:hover {
-  background-color: #2f91fa;
-  transition: 0.3s ease-in-out;
+	background-color: #2f91fa;
+	transition: 0.3s ease-in-out;
 }
 
 /* tools hover */
 
 .toolsContainer {
-  width: min(100%, 40rem);
-  display: none;
+	width: min(100%, 40rem);
 }
 
 .asideText > p {
-  margin: 0;
+	margin: 0;
 }
 
 .icons,
 .figIcon {
-  font-size: 1.25rem;
-  color: var(--font-color);
-  line-height: 1.5;
+	font-size: 1.25rem;
+	color: var(--font-color);
+	line-height: 1.5;
 }
 
 .plus {
-  line-height: 1;
+	line-height: 1;
 }
 
 .info aside span {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
 .info figure {
-  width: 7%;
+	width: 7%;
 }
 
 .info aside {
-  width: 93%;
+	width: 93%;
 }
 
 /* resources hover */
 
 .resourcesContainer {
-  width: min(100%, 16rem);
-  display: none;
+	width: min(100%, 16rem);
 }
 
 .textAside {
-  font-size: 0.9rem;
+	font-size: 0.9rem;
+	margin: 0;
+}
+
+.resourceInfo {
+	cursor: pointer;
+	padding: 0.1rem 0.5rem;
+	border-radius: 8px;
+}
+
+.resourceInfo:hover {
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .resourceInfo .asideResource {
-  width: 85%;
+	width: 85%;
 }
 
 .resourceInfo .figIcon {
-  width: 15%;
-  line-height: 1;
+	width: 15%;
+}
+
+/* Header */
+
+.header-wrapper {
+	border-top: 1px solid transparent;
+	color: white;
+}
+
+.headerText {
+	margin-top: clamp(1.5rem, 5vw, 50%);
+	margin-bottom: 0.5rem;
+	font-size: clamp(1.5rem, 3vw, 5rem);
+	font-weight: 900;
+}
+
+/* converter  */
+
+.convert-wrapper {
+	margin-top: clamp(1.5rem, 7vh, 10vh);
+}
+
+.head-list .icon {
+	font-size: 1.25rem;
+	align-items: center;
+}
+/* Remove the default arrows for number input */
+.inputs::-webkit-inner-spin-button,
+.inputs::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.inputs:focus {
+	border: 1px solid var(--font-color);
+	outline: none;
+}
+
+.inputs {
+	width: clamp(15rem, 25vw, 100%);
+	border: 1.2px solid gray;
+	font-family: var(--familiy);
+}
+
+.convert-title {
+	padding: 0;
+	margin: 0;
+	font-weight: 500;
+}
+
+datalist {
+	font-size: 2rem;
+	border: 1.2px solid gray;
+	height: 4rem;
+}
+
+.convert-btn {
+	font-weight: 500;
+	color: white;
+	background-color: #0071eb;
+	font-size: 1rem;
+	width: clamp(7rem, 10vh, 80%);
+}
+
+.caption {
+	font-size: 0.7rem;
+	line-height: 1.5;
+}
+
+/* converter amount */
+
+.amount-text {
+	margin: 0;
+	padding: 0;
+}
+
+.inputAmount {
+	font-size: clamp(1rem, 1.5vw, 4rem);
+	font-weight: 500;
+	opacity: 0.8;
+}
+
+.converted-amount {
+	font-size: clamp(1.25rem, 2vw, 2rem);
+	margin-block: clamp(0.3rem, 0.6vw, 2rem);
+	opacity: 0.8;
+	font-weight: 700;
+}
+
+.equalAmount {
+	font-size: clamp(0.7rem, 1.15vw, 1.25rem);
+	line-height: 1.5;
+	opacity: 0.7;
 }
