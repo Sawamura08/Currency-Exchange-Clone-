@@ -221,6 +221,7 @@
 							id="countries"
 							class="inputs from-country px-4 py-2 rounded-lg"
 							required
+							(change)="convertCurrency()"
 						>
 							<option value="" selected disabled hidden>Select Country</option>
 							<option *ngFor="let currency of currencies | keyvalue" value="{{ currency.key }}">
@@ -236,6 +237,7 @@
 							id="countries"
 							class="inputs to-country px-4 py-2 rounded-lg"
 							required
+							(change)="convertCurrency()"
 						>
 							<option value="" selected disabled hidden>Select Country</option>
 							<option *ngFor="let currency of currencies | keyvalue" value="{{ currency.key }}">
@@ -250,9 +252,9 @@
 					*ngIf="convert.getConvertedValue()"
 					[@transformMenu]="isConverted ? 'visible' : 'void'"
 				>
-					<h3 class="inputAmount amount-text">{{ inputAmount }} {{ fromCountry }} =</h3>
+					<h3 class="inputAmount amount-text">{{ inputAmount }} {{ fromCountry.toUpperCase() }} =</h3>
 					<h1 class="amount-text converted-amount">
-						{{ convert.getConvertedValue() }} {{ toCountry.toUpperCase() }}
+						{{ convert.getConvertedValue() | number : "1.0-4" }} {{ toCountry.toUpperCase() }}
 					</h1>
 					<h4 class="amount-text equalAmount">
 						1 {{ fromCountry.toUpperCase() }} = {{ convert.getValueToCountry() }}
@@ -293,5 +295,37 @@
 				</footer>
 			</section>
 		</main>
+
+		<section class="transfer-wrapper w-full h-screen">
+			<header class="transfer-header">
+				<h2 class="transfer-header-text">How to transfer money in 3 easy steps</h2>
+			</header>
+
+			<section class="transfer-content flex flex-row gap-8 justify-center">
+				<div class="transfer">
+					<figure class="transfer-figure"><i class="fa-solid fa-user-plus"></i></figure>
+					<h3>1. Create account</h3>
+					<dfn class="transfer-caption"
+						>It takes just a few minutes, and all you need is an email address</dfn
+					>
+				</div>
+				<div class="transfer">
+					<figure class="transfer-figure"><i class="fa-solid fa-file-invoice"></i></figure>
+					<h3>2. Enter details</h3>
+					<dfn class="transfer-caption"
+						>Add recipient (you'll need their address, bank account/IBAN, swift/BIC) and payment
+						information.</dfn
+					>
+				</div>
+				<div class="transfer">
+					<figure class="transfer-figure"><i class="fa-solid fa-comments-dollar"></i></figure>
+					<h3>3. Confirm and send</h3>
+					<dfn class="transfer-caption"
+						>Check the currencies and amount are correct, get the expected delivery date, and send your
+						money transfer.</dfn
+					>
+				</div>
+			</section>
+		</section>
 	</body>
 </html>

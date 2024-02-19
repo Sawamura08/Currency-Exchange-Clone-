@@ -30,6 +30,7 @@ export class ConvertCurrencyService {
 
 	ConvertNow(inputAmount: number) {
 		this.convertedValue = inputAmount * this.valudeOfSelectedFromCountry;
+		this.convertedValue = parseFloat(this.convertedValue.toFixed(4));
 	}
 
 	getConvertedValue(): any {

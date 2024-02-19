@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 :host {
 	--font-color: #1a86fa;
+	--alternative-color: #0a146e;
 	--familiy: "Inter", sans-serif;
 }
 
@@ -197,6 +198,55 @@ datalist {
 
 .equalAmount {
 	font-size: clamp(0.7rem, 1.15vw, 1.25rem);
+	line-height: 1.5;
+	opacity: 0.7;
+}
+
+/* transfer wrapper */
+
+.transfer-header {
+	margin-top: clamp(0.7rem, 15vh, 20%);
+	margin-bottom: clamp(0.5rem, 3rem, 5vh);
+	text-align: center;
+}
+
+.transfer-header-text {
+	font-size: clamp(1rem, 1.5rem, 3rem);
+	color: var(--alternative-color);
+}
+
+.transfer {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	border-radius: 15px;
+	border-radius: 15px;
+	box-shadow: 5px 5px 0px #5a5a5a, -5px -5px 0px #ffffff;
+	padding: clamp(1rem, 3vw, 4rem);
+}
+
+.transfer-figure {
+	width: clamp(5vw, 10vw, 60%);
+	border-radius: 50%;
+	border: 1px solid #ccc;
+}
+
+.transfer-figure i {
+	font-size: clamp(0.7rem, 4vw, 7rem);
+	aspect-ratio: 1;
+	color: var(--alternative-color);
+	line-height: 2;
+}
+
+.transfer h3 {
+	font-size: clamp(1rem, 1.5vw, 2rem);
+	margin-block: clamp(1rem, 3vh, 3rem);
+}
+
+.transfer-caption {
+	font-size: clamp(1rem, 1vw, 2rem);
 	line-height: 1.5;
 	opacity: 0.7;
 }
